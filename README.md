@@ -13,7 +13,7 @@ In this repo I've included all the necessary files to setup the identical enviro
   privacy_policy.feature includes the feature description and test scenario written in Gherkin (which Behat interprets).
   FeatureContext.php includes the feature definitions for each scenario.  Behat interprets the privacy_policy.feature and suggests specific features to implement.  These features are defined within FeatureContext.php using PHP.
   
-5)Start the selenium2 server. In a separate terminal (with the same path) run ./bin/manager start. You'll see 
+5)Start the selenium2 server. In a separate terminal (with the same path) run ./bin/manager start. You'll see: 
 "ensuring binaries are up to date"
 "Downloading chromedriver_linux64.zip"
 "1 binary updated" ****THIS IS A BUG- READ BELOW FOR FIX****
