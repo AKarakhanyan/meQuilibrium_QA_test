@@ -1,6 +1,8 @@
 # meQuilibrium_QA_test
 meQuilibrium privacy page click through using behat and selenium2
 
+OS Used: Ubuntu 16.04 LTS
+
 In this repo I've included all the necessary files to setup the identical environment I used for these tests.
 
 1) Copy/download all files into a project/test folder.
@@ -39,8 +41,16 @@ Feature: Access meQuilibrium privacy policy
     Given I am on meQuilibrium                                   # FeatureContext::iAmOnMequilibrium()
     When I click on "Privacy"                                    # FeatureContext::iClickOn()
     Then the url will be "https://www.mequilibrium.com/privacy/" # FeatureContext::theUrlWillBe()
-    And I will see "Last Updated: May 22nd, 2017"                # FeatureContext::iWillSee()
+    And the last update was "Last Updated: May 22nd, 2017"       # FeatureContext::theLastUpdateWas()
 ---
 Each step under scenario should be in GREEN!  SUCCESS!  
 
 I ensured that the tests are not failing silently by using "expect" in the FeatureContext.php file.  If the privacy URL or Last Updated differs than what I've defined, an error is thrown.  I've double checked this by adding \\ at the end of the url and deleting 17 from 2017 in the date.  When these changes are made, both tests fail.
+
+Areas to Improve:
+
+theLastUpdateWas function is not as robust or flexible as I would like.  It finds the last update by selecting an element with <em> tags.  Currently there is only one element with <em> tags on the privacy page (the one containing the last update) but if this were to change, this test would fail. For the same reasons, this function is not flexible. I can only test for content within <em> tags.
+
+Ideally, I need to find or define a method that can scan the page for specific text (that is passed into the function as an argument).  
+
+
