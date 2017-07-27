@@ -49,7 +49,7 @@ I ensured that the tests are not failing silently by using "expect" in the Featu
 
 Areas to Improve:
 
-theLastUpdateWas function is not as robust or flexible as I would like.  It finds the last update by selecting an element with <em> tags.  Currently there is only one element with <em> tags on the privacy page (the one containing the last update) but if this were to change, this test would fail. For the same reasons, this function is not flexible. I can only test for content within <em> tags.
+theLastUpdateWas function is not as robust or flexible as I would like.  It finds the last update by selecting an element with '<em>' tags.  Currently there is only one element with '<em>' tags on the privacy page (the one containing the last update) but if this were to change, this test would fail. For the same reasons, this function is not flexible. I can only test for content within '<em>' tags.
 
 Ideally, I need to find or define a method that can scan the page for specific text (that is passed into the function as an argument).  
 
