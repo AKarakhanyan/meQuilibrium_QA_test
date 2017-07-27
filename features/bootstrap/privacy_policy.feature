@@ -7,4 +7,4 @@ Scenario: Access meQuilibrium privacy policy
   Given I am on meQuilibrium
   When I click on "Privacy"
   Then the url will be "https://www.mequilibrium.com/privacy/"
-    And I will see "Last Updated: May 22nd, 2017"
+    And the last update was "Last Updated: May 22nd, 2017"

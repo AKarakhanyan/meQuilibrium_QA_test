@@ -12,7 +12,7 @@ use Behat\MinkExtension\Context\RawMinkContext;
  */
 class FeatureContext extends RawMinkContext implements Context, SnippetAcceptingContext
 {
-    
+
     /**
      * @Given I am on meQuilibrium
      */
@@ -26,28 +26,28 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
      */
     public function iClickOn($link)
     {
-        $this->getSession()->getPage()->find('css', '#menu-item-157 > a')->click();
+        $this->getSession()->getPage()->findLink($link)->click();
     }
 
     /**
-     * @Then the url will be :privacyUrl
+     * @Then the url will be :Url
      */
-    public function theUrlWillBe($privacyUrl)
+    public function theUrlWillBe($url)
     {
         
         $currentUrl = $this->getSession()->getCurrentUrl();
 
-        expect($currentUrl)->toBe($privacyUrl);
+        expect($currentUrl)->toBe($url);
    
     }
 
     /**
-     * @Then I will see :arg1
+     * @Then the last update was :date
      */
-    public function iWillSee($lastUpdated)
+    public function theLastUpdateWas($date)
     {
-        $lastUpdate = $this->getSession()->getPage()->find('css', '#primary > section > div > div > p:nth-child(1) > em');
+        $lastUpdate = $this->getSession()->getPage()->find('css', 'em');
 
-        expect($lastUpdate->getText())->toBe($lastUpdated);
+        expect($lastUpdate->getText())->toBe($date);
     }
 }
