@@ -45,7 +45,4 @@ Feature: Access meQuilibrium privacy policy
 ---
 Each step under scenario should be in GREEN!  SUCCESS!  
 
-I ensured that the tests are not failing silently by using "expect" in the FeatureContext.php file.  If the privacy URL or Last Updated differs than what I've defined, an error is thrown.  I've double checked this by adding \\ at the end of the url and deleting 17 from 2017 in the date.  When these changes are made, both tests fail.
-
-
 
